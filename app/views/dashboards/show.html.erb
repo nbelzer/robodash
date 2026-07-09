@@ -1,6 +1,8 @@
 <% content_for(:title) { "Robodash: #{@dashboard.name}" } %>
 
-<%= turbo_stream_from @dashboard %>
+<%= tag.div data: {controller: "throttled-stream"} do %>
+  <%= turbo_stream_from @dashboard %>
+<% end %>
 
 <div class="p-5 md:p-10">
   <div class="flex items-center justify-between mb-8">
